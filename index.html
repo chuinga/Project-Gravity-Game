@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="./styles/style.css" />
+
+	<title>DH Gravity</title>
+
+</head>
+
+<body>
+
+    <main>
+        
+        <!-- game start screen -->
+        <section id="game-intro">
+            <img src="/images/game-logo.png" alt="Game Logo" class="main-logo-img">
+            <br />
+            
+            <div id="start">
+                <img src="/images/mtb-logo.png" alt="DH Logo" class="mtb-logo-img">
+                <button id="start-button">Start Game</button>                
+                <div>
+                    <img src="/images/arrow-keys.png" alt="Arrow Keys" class="arrows-img">
+                    <p class="instructions">Use up, left and right arrows</p>
+                    <p class="instructions">to overcome the obstacles!</p>
+                </div>                
+            </div>
+        </section>
+        
+        <!-- game screen -->
+        <section id="game-container">
+            
+            <div id="game-screen">
+                <div class="stats">
+                    <h2>Stats</h2>
+                    <p>Score: <span id="score">0</span></p>
+                    <p>Lives: <span id="lives">5</span></p>
+                </div>  
+                <img src="/images/dry-grass.png" alt="Dry Grass" class="dry-grass"> 
+            </div>
+        </section>
+
+        <!-- game-end screen -->
+        <section id="game-end">
+            <h1>Game Over!</h1>
+            <br />
+            <button id="restart-button">Restart</button>
+            <img src="/images/game-end.png" alt="Game-End" class="game-end-img">
+        </section>       
+
+    </main>
+
+    <script type="text/javascript" src="/js/player.js"></script>
+    <script type="text/javascript" src="/js/game.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+
+</body>
+
+</html>
