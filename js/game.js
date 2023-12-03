@@ -20,8 +20,7 @@ class Game {
     gameLoop() {
         this.player.move()
 
-        requestAnimationFrame(() => {
-            this.gameLoop()
-        })
+        requestAnimationFrame(() => this.gameLoop()
+        )
     }
 }

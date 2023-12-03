@@ -48,12 +48,11 @@ table {
 }
 body {    
     padding: 0;
-    margin: 0;
     text-align: center;
 }
   
-#game-intro {    
-    padding: 8% 0px;
+#game-intro { 
+    padding: 40px 0px;
 }
 
 #start {
@@ -86,30 +85,43 @@ body {
     left: 0;
     top: 81%;
     height: 100px;
-    width: 900px;
-    z-index: 10;
-    animation: slide 5s linear infinite;
-    
+    width: 1500px;
+    background-image: url(../images/dry-grass.png);
+    background-size: cover;
+    z-index: 1;
+    animation-name: slide;
+    animation-duration: 5s;
+    animation-fill-mode: none;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-timing-function: linear;
+    /*animation: slide 5s linear infinite;*/
 }
 
+
 @keyframes slide {
+    from{ transform: translateX(-1500px)}
+    to{ transform: translate(-10px)}
+}
+
+/*@keyframes slide {
     0% {        
-        left: 0%;
+        left: 0%;    
     }
     25% {        
-        left: -20%;
+        left: -25%;
     }
     50% {        
-        left: -40%;
+        left: -50%;        
     }
     75% {        
-        left: -60%;
+        left: -75%;
     }
     100% {        
         left: -100%;
     }
-}
-  
+}*/
+
 #game-end {
     display: none;
 }
@@ -128,7 +140,7 @@ body {
     margin-bottom: 15%;
 }
   
-body button {
+#start-button {
     font-size: 20px;
     background-color: blue;
     color: #fff;
@@ -139,11 +151,22 @@ body button {
     margin-bottom: 20px;
     margin-right: 2%;
     cursor: pointer;
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.589); 
+    outline: none; 
+    transition: 0.2s all; 
 }
+
+#start-button:active { 
+    transform: scale(0.9);     
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.589);     
+} 
+
+
 .instructions {
     font-size: 1.2rem;
 }
 
 .stats {
     font-size: 1.5rem;
+    font-weight: bold;
 }
