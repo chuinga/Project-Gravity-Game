@@ -2,33 +2,36 @@ window.addEventListener('load', () => {
     const startButton = document.getElementById("start-button")
     const restartButton = document.getElementById("restart-button")
   
-    const game = new Game()
+    let game
   
     function startGame() {
       console.log("start game")
+      game = new Game()
       game.start()
     }
     startButton.addEventListener("click", function () {
       startGame()
     })
 
+    restartButton.addEventListener("click", function () {
+      //startGame()
+      location.reload()
+    })
+
     document.addEventListener('keydown', event => { 
       if (
         event.code === 'ArrowUp' || 
         event.code === 'KeyW') {
-        console.log('Jump!')
         game.player.directionY = -3
       }
       if (
         event.code === 'ArrowLeft' || 
         event.code === 'KeyA') {
-        console.log('Go back')
         game.player.directionX = -3
       }
       if (
         event.code === 'ArrowRight' || 
         event.code === 'KeyD') {
-        console.log('Go forward')
         game.player.directionX = 3
       }
     })
@@ -37,7 +40,6 @@ window.addEventListener('load', () => {
       if (
         event.code === 'ArrowUp' || 
         event.code === 'KeyW') {
-        console.log('Jump!')
         game.player.directionY = 3
       }
       if (
@@ -45,7 +47,6 @@ window.addEventListener('load', () => {
         event.code === 'KeyA' || 
         event.code === 'ArrowRight' || 
         event.code === 'KeyD') {
-        console.log('Go back')
         game.player.directionX = 0
       }
     })

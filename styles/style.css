@@ -81,46 +81,27 @@ body {
 }
 
 .dry-grass {
-    position: relative;
-    left: 0;
-    top: 81%;
-    height: 100px;
-    width: 1500px;
+    position: relative;    
+    top: 695px;
+    height: 64px;
     background-image: url(../images/dry-grass.png);
     background-size: cover;
     z-index: 1;
-    animation-name: slide;
-    animation-duration: 5s;
-    animation-fill-mode: none;
-    animation-iteration-count: infinite;
-    animation-direction: reverse;
-    animation-timing-function: linear;
-    /*animation: slide 5s linear infinite;*/
+    animation: slide 5s linear infinite;
 }
-
 
 @keyframes slide {
-    from{ transform: translateX(-1500px)}
-    to{ transform: translate(-10px)}
-}
-
-/*@keyframes slide {
-    0% {        
-        left: 0%;    
-    }
-    25% {        
-        left: -25%;
-    }
-    50% {        
-        left: -50%;        
-    }
-    75% {        
-        left: -75%;
+    0% {      
+        background-position: 900px 510px;
+       }
+   
+    95% {        
+        background-position: 50px 510px;
     }
     100% {        
-        left: -100%;
+        background-position: 0 510px;
     }
-}*/
+}
 
 #game-end {
     display: none;
