@@ -108,29 +108,32 @@ body {
 }
   
 .main-logo-img {
-    width: 600px;
+    width: 35vw;
+    max-width: 600px;
 }
 
 .mtb-logo-img {
-    height: 15rem;
-    width: 15rem;
+    width: 25vw;
+    max-width: 240px;
 }
   
 .arrows-img {
-    width: 100px;
+    width: 10vw;
+    max-width: 100px;
     margin-bottom: 15%;
 }
   
 #start-button {
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 22px);
     background-color: blue;
     color: #fff;
     height: 7vh;
-    padding: 20px 40px;
+    min-height: 32px;
+    padding: 1vh 5vw;
     border: 1;
     border-radius: 40px;
     margin-bottom: 20px;
-    margin-right: 2%;
+    margin-right: 0;
     cursor: pointer;
     box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.589); 
     outline: none; 
@@ -144,11 +147,11 @@ body {
 
 
 .instructions {
-    font-size: 1.2rem;
+    font-size: clamp(11px, 2vw, 22px);
 }
 
 .stats {
-    font-size: 1.5rem;
+    font-size: clamp(17px, 3vw, 27px);
     font-weight: bold;
 }
 
@@ -161,15 +164,16 @@ body {
 }
 
 #restart-button {
-    font-size: 25px;
+    font-size: clamp(16px, 2vw, 22px);
     background-color: blue;
     color: #fff;
     height: 7vh;
-    padding: 20px 40px;
+    min-height: 15px;
+    padding: 1vh 5vw;
     border: 1;
     border-radius: 40px;
     margin-bottom: 20px;
-    margin-right: 2%;
+    margin-right: 0;
     cursor: pointer;
     box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.589); 
     outline: none; 
@@ -181,7 +185,11 @@ body {
 }
 
 .finale{
-    font-size: 40px;
+    font-size: clamp(17px, 3vw, 35px);
     font-weight: bolder;
     color: rgb(6, 6, 118);
+}
+
+.game-end-img {
+    width: 99vw;
 }

@@ -5,7 +5,6 @@ window.addEventListener('load', () => {
     let game
   
     function startGame() {
-      console.log("start game")
       game = new Game()
       game.start()
     }
