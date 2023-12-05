@@ -7,6 +7,7 @@ class Game {
         this.width = 900
         this.player = null
         this.obstacles = []
+        this.bonus = []
         this.animateId = null
         this.score = 0
         this.lives = 1
@@ -26,7 +27,8 @@ class Game {
 
     gameLoop() {
         this.player.move()
-
+        
+        // obstacles behaviour
         const nextObstacles = []
         this.obstacles.forEach(currentObstacle => {
             currentObstacle.move()            
@@ -49,19 +51,44 @@ class Game {
             }
         })
         this.obstacles = nextObstacles
-        function randomInterval(min, max) {
+        function rndIntvObstacles(min, max) {
             return Math.floor(Math.random() * (max - min)) + min;
         }
-        const random = randomInterval(200, 400)
-        if (this.animateId % random === 0) {
+        const randomObstacles = rndIntvObstacles(200, 400)
+        if (this.animateId % randomObstacles === 0) {
             this.obstacles.push(new Obstacles(this.gameScreen))
         }
 
-        /*if (this.animateId % 300 === 0) {
-            this.obstacles.push(new Obstacles(this.gameScreen))
-        }*/
+        // bonus items behaviour
+        const nextBonus = []
+        this.bonus.forEach(currentBonus => {
+            currentBonus.move()            
+            if(currentBonus.left > -100) {
+                if(this.player.didCollide(currentBonus)) {
+                     console.log('colision')    
+                     currentBonus.element.remove()  
+                     this.lives += 1
+                     this.score += 5                                                              
+                }
+                else {
+                    nextBonus.push(currentBonus)
+                }                
+            }
+            else {
+                currentBonus.element.remove()
+            }
+        })
 
-        //document.getElementById('scores').innerText = this.score
+        this.bonus = nextBonus
+        function rndIntvBonus(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+        const randomBonus = rndIntvBonus(300, 500)
+        if (this.animateId % randomBonus === 1) {
+            this.bonus.push(new Bonus(this.gameScreen))
+        }
+
+        document.getElementById('score').innerText = this.score
         document.getElementById('lives').innerText = this.lives
 
         if (this.isGameOver) {

@@ -75,4 +75,19 @@ class Player{
           return false
         }
       }
+      didCollide(bonus) {
+        const playerRect = this.element.getBoundingClientRect()
+        const bonusRect = bonus.element.getBoundingClientRect()
+    
+        if (
+          playerRect.left < bonusRect.right &&
+          playerRect.right > bonusRect.left &&
+          playerRect.top < bonusRect.bottom &&
+          playerRect.bottom > bonusRect.top
+        ) {
+          return true
+        } else {
+          return false
+        }
+      }
 }

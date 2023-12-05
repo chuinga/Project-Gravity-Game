@@ -14,10 +14,10 @@ window.addEventListener('load', () => {
     })
 
     restartButton.addEventListener("click", function () {
-      //startGame()
       location.reload()
     })
 
+    // rider controls
     document.addEventListener('keydown', event => { 
       if (
         event.code === 'ArrowUp' || 
