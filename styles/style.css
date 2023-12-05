@@ -151,3 +151,37 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+.end {
+    margin: 20px 200px 50px;
+    align-items:baseline;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+#restart-button {
+    font-size: 25px;
+    background-color: blue;
+    color: #fff;
+    height: 7vh;
+    padding: 20px 40px;
+    border: 1;
+    border-radius: 40px;
+    margin-bottom: 20px;
+    margin-right: 2%;
+    cursor: pointer;
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.589); 
+    outline: none; 
+    transition: 0.2s all; 
+}
+#restart-button:active { 
+    transform: scale(0.9);     
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.589);     
+}
+
+h1{
+    font-size: 40px;
+    font-weight: bolder;
+    color: rgb(6, 6, 118);
+}

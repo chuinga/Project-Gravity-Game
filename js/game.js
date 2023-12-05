@@ -9,7 +9,7 @@ class Game {
         this.obstacles = []
         this.animateId = null
         this.score = 0
-        this.lives = 3
+        this.lives = 1
         this.isGameOver = false
     }
 
