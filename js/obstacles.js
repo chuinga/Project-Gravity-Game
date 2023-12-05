@@ -6,7 +6,7 @@ class Obstacles {
         this.height = 60    
         this.width = 88
 
-        const imageDb = ['../images/rock1.png', '../images/rock2.png', '../images/rock3.png', '../images/rock4.png', '../images/rock5.png', '../images/rock6.png']        
+        const imageDb = ['images/rock1.png', 'images/rock2.png', 'images/rock3.png', 'images/rock4.png', 'images/rock5.png', 'images/rock6.png']        
         function showImage() {
             let a = Math.floor(Math.random() * imageDb.length);
             return imageDb[a];
