@@ -5,12 +5,34 @@ class Bonus {
         this.top = 758
         this.height = 60    
         this.width = 56
+        let bottle = false
+        
 
-        const imageDb = ['images/apple.png', 'images/avocado.png', 'images/whey.png']        
+        const snackDb = ['images/apple.png', 'images/avocado.png', 'images/whey.png']        
+        const bottleDb = ['images/beirao.png', 'images/barcavelha.png', 'images/sagres.png']
+        
         function showImage() {
-            let a = Math.floor(Math.random() * imageDb.length);
-            return imageDb[a];
-        }
+            if(bottle) {
+               const a = Math.floor(Math.random() * bottleDb.length);
+            return bottleDb[a]; 
+            }
+            else {
+                const a = Math.floor(Math.random() * snackDb.length);
+            return snackDb[a]; 
+            }            
+        }    
+
+        document.addEventListener('keydown', event => { 
+            if (event.code === 'KeyB') {              
+                bottle = true
+                console.log(event.code)
+            }
+            if (event.code === 'KeyS') {              
+                bottle = false
+                console.log(event.code)
+            }   
+            
+                  })
 
         this.element = document.createElement('img')
         this.element.src = showImage()

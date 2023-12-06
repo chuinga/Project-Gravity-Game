@@ -1,9 +1,8 @@
 window.addEventListener('load', () => {
     const startButton = document.getElementById("start-button")
     const restartButton = document.getElementById("restart-button")
-  
-    let game
-  
+    //const jumping = document.getElementById()
+    
     function startGame() {
       game = new Game()
       game.start()
@@ -21,33 +20,33 @@ window.addEventListener('load', () => {
       if (
         event.code === 'ArrowUp' || 
         event.code === 'KeyW') {
-        game.player.directionY = -3
+        game.rider.directionY = -3
       }
       if (
         event.code === 'ArrowLeft' || 
         event.code === 'KeyA') {
-        game.player.directionX = -3
+        game.rider.directionX = -3
       }
       if (
         event.code === 'ArrowRight' || 
         event.code === 'KeyD') {
-        game.player.directionX = 3
-      }
+        game.rider.directionX = 3
+      }      
     })
 
     document.addEventListener('keyup', event => { 
       if (
         event.code === 'ArrowUp' || 
         event.code === 'KeyW') {
-        game.player.directionY = 3
+        game.rider.directionY = 3
       }
       if (
         event.code === 'ArrowLeft' || 
         event.code === 'KeyA' || 
         event.code === 'ArrowRight' || 
         event.code === 'KeyD') {
-        game.player.directionX = 0
+        game.rider.directionX = 0
       }
-    })
+    })    
   })  
   

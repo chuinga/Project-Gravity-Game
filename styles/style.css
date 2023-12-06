@@ -47,11 +47,14 @@ table {
 	border-spacing: 0;
 }
 body {    
+    background-color: black;
     padding: 0;
     text-align: center;
 }
   
 #game-intro { 
+    background-color: black;   
+    magin
     padding: 40px 0px;
 }
 
@@ -75,7 +78,7 @@ body {
     align-content: center;
     padding: 20px 0px;
     overflow: hidden;
-    position: relative;
+    position: absolute;
     background-image: url(../images/mountain.gif);
     background-size: cover;
 }
@@ -83,7 +86,7 @@ body {
 .dry-grass {
     position: relative;    
     top: 695px;
-    height: 64px;
+    height: 65px;
     background-image: url(../images/dry-grass.png);
     background-size: cover;
     z-index: 1;
@@ -113,8 +116,8 @@ body {
 }
 
 .mtb-logo-img {
-    width: 25vw;
-    max-width: 240px;
+    width: 30vw;
+    max-width: 290px;
 }
   
 .arrows-img {
@@ -133,7 +136,7 @@ body {
     border: 1;
     border-radius: 40px;
     margin-bottom: 20px;
-    margin-right: 0;
+    margin-right: 40px;
     cursor: pointer;
     box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.589); 
     outline: none; 
@@ -147,6 +150,7 @@ body {
 
 
 .instructions {
+    color: white;
     font-size: clamp(11px, 2vw, 22px);
 }
 
@@ -155,7 +159,7 @@ body {
     font-weight: bold;
 }
 
-.end {
+.end {;
     margin: 20px 50px 50px;
     align-items:baseline;
     display: flex;
@@ -187,7 +191,7 @@ body {
 .finale{
     font-size: clamp(17px, 3vw, 35px);
     font-weight: bolder;
-    color: rgb(6, 6, 118);
+    color: rgb(6, 118, 107);
 }
 
 .game-end-img {

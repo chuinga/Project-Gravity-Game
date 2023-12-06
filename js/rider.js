@@ -1,8 +1,8 @@
-class Player{
+class Rider{
     constructor(gameScreen) {
         this.gameScreen = gameScreen
         this.left = 30
-        this.top = 690
+        this.top = 700
         this.height = 128
         this.width = 120
         this.directionX = 0
@@ -61,14 +61,14 @@ class Player{
     }
 
     didCollide(obstacle) {
-        const playerRect = this.element.getBoundingClientRect()
+        const riderRect = this.element.getBoundingClientRect()
         const obstacleRect = obstacle.element.getBoundingClientRect()
     
         if (
-          playerRect.left < obstacleRect.right &&
-          playerRect.right > obstacleRect.left &&
-          playerRect.top < obstacleRect.bottom &&
-          playerRect.bottom > obstacleRect.top
+          riderRect.left < obstacleRect.right &&
+          riderRect.right > obstacleRect.left &&
+          riderRect.top < obstacleRect.bottom &&
+          riderRect.bottom > obstacleRect.top
         ) {
           return true
         } else {
@@ -76,14 +76,14 @@ class Player{
         }
       }
       didCollide(bonus) {
-        const playerRect = this.element.getBoundingClientRect()
+        const riderRect = this.element.getBoundingClientRect()
         const bonusRect = bonus.element.getBoundingClientRect()
     
         if (
-          playerRect.left < bonusRect.right &&
-          playerRect.right > bonusRect.left &&
-          playerRect.top < bonusRect.bottom &&
-          playerRect.bottom > bonusRect.top
+          riderRect.left < bonusRect.right &&
+          riderRect.right > bonusRect.left &&
+          riderRect.top < bonusRect.bottom &&
+          riderRect.bottom > bonusRect.top
         ) {
           return true
         } else {
