@@ -18,13 +18,38 @@ class Game {
         this.gameMusic = new Audio('/sounds/game.mp3')
         this.ouchSound = new Audio('/sounds/ouch.mp3')
         this.yummySound = new Audio('/sounds/yummy.mp3')
+        this.gameOverSound = new Audio('/sounds/game-over.mp3')
+        this.endMusic = new Audio('/sounds/end.mp3')
+        this.gameMusic.volume = 0.2
+        this.ouchSound.volume = 0.3
+        this.yummySound.volume = 0.6
+        this.gameOverSound.volume = 0.1
+        this.endMusic.volume = 0.1
+        this.bottle = false
+        
+
+        this.snackDb = ['images/apple.png', 'images/avocado.png', 'images/whey.png']        
+        this.bottleDb = ['images/beirao.png', 'images/barcavelha.png', 'images/sagres.png']
+        
+        
     }
+
+    showImage() {
+        if(this.bottle) {
+           const a = Math.floor(Math.random() * this.bottleDb.length);
+            return this.bottleDb[a]; 
+        }
+        else {
+            const a = Math.floor(Math.random() * this.snackDb.length);
+            return this.snackDb[a];         
+        }            
+    } 
 
     start() {
         this.startScreen.style.display = 'none'
         this.gameScreen.style.display = 'block'
         this.endScreen.style.display = 'none'
-        this.gameMusic.volume = 0.3
+        this.endMusic.pause()        
         this.gameMusic.play()
         //this.gameScreen.style.height = `${this.height}vh`
         //this.gameScreen.style.width = `${this.width}vw`
@@ -44,13 +69,12 @@ class Game {
             currentObstacle.move()            
             if(currentObstacle.left > -100) {
                 if(this.rider.didCollide(currentObstacle)) {  
-                     currentObstacle.element.remove()  
-                     this.lives -= 1  
-                     this.ouchSound.volume = 0.3
-                     this.ouchSound.play()
-                     if (this.lives <= 0) {
+                    currentObstacle.element.remove()  
+                    this.lives -= 1  
+                    this.ouchSound.play()
+                    if (this.lives <= 0) {
                         this.isGameOver = true
-                     }
+                    }
                 }
                 else {
                     nextObstacles.push(currentObstacle)
@@ -76,11 +100,10 @@ class Game {
             currentBonus.move()            
             if(currentBonus.left > -100) {
                 if(this.rider.didCollide(currentBonus)) {
-                     currentBonus.element.remove() 
-                     this.yummySound.volume = 0.6
-                     this.yummySound.play() 
-                     this.lives += 1
-                     this.score += 5                                                              
+                    currentBonus.element.remove()                     
+                    this.yummySound.play() 
+                    this.lives += 1
+                    this.score += 5                                                              
                 }
                 else {
                     nextBonus.push(currentBonus)
@@ -97,7 +120,7 @@ class Game {
         }
         const randomBonus = rndIntvBonus(300, 500)
         if (this.animateId % randomBonus === 1) {
-            this.bonus.push(new Bonus(this.gameScreen))
+            this.bonus.push(new Bonus(this.gameScreen, this.showImage()))
         }
 
         document.getElementById('score').innerText = this.score
@@ -105,7 +128,10 @@ class Game {
 
         if (this.isGameOver) {
             this.gameScreen.style.display = 'none'
-            this.endScreen.style.display = 'block'        
+            this.endScreen.style.display = 'block'  
+            this.gameMusic.pause()            
+            this.gameOverSound.play()             
+            this.endMusic.play()
             this.rider.element.remove()
             document.getElementById('finalScore').innerText = this.score
             console.log(this.finalScore)
@@ -114,8 +140,6 @@ class Game {
         else {
           this.animateId = requestAnimationFrame(() => this.gameLoop()
         )  
-        }
-
-        
+        }        
     }
 }
