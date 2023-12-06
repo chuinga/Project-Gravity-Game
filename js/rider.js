@@ -19,6 +19,9 @@ class Rider{
         this.element.style.top = `${this.top}px`
         
         this.gameScreen.appendChild(this.element)
+
+        
+        this.rotated = document.getElementById(this.element)
     }
 
     move() { 

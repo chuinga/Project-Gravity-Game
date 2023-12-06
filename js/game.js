@@ -2,6 +2,7 @@ class Game {
     constructor() {
         this.startScreen = document.getElementById('game-intro')
         this.gameScreen = document.getElementById('game-screen')
+        this.controlButtons = document.getElementById('control-buttons')
         this.endScreen = document.getElementById('game-end')
         //this.height = 80
         //this.width = 100
@@ -15,11 +16,11 @@ class Game {
         this.lives = 1
         this.isGameOver = false
         this.finalScore = 0
-        this.gameMusic = new Audio('/sounds/game.mp3')
-        this.ouchSound = new Audio('/sounds/ouch.mp3')
-        this.yummySound = new Audio('/sounds/yummy.mp3')
-        this.gameOverSound = new Audio('/sounds/game-over.mp3')
-        this.endMusic = new Audio('/sounds/end.mp3')
+        this.gameMusic = new Audio('sounds/game.mp3')
+        this.ouchSound = new Audio('sounds/ouch.mp3')
+        this.yummySound = new Audio('sounds/yummy.mp3')
+        this.gameOverSound = new Audio('sounds/game-over.mp3')
+        this.endMusic = new Audio('sounds/end.mp3')
         this.gameMusic.volume = 0.2
         this.ouchSound.volume = 0.3
         this.yummySound.volume = 0.6
@@ -48,6 +49,7 @@ class Game {
     start() {
         this.startScreen.style.display = 'none'
         this.gameScreen.style.display = 'block'
+        this.controlButtons.style.display = 'block'
         this.endScreen.style.display = 'none'
         this.endMusic.pause()        
         this.gameMusic.play()
@@ -127,7 +129,8 @@ class Game {
         document.getElementById('lives').innerText = this.lives
 
         if (this.isGameOver) {
-            this.gameScreen.style.display = 'none'
+            this.gameScreen.style.display = 'none'            
+            this.controlButtons.style.display = 'none'
             this.endScreen.style.display = 'block'  
             this.gameMusic.pause()            
             this.gameOverSound.play()             

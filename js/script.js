@@ -27,11 +27,14 @@ window.addEventListener('load', () => {
         event.code === 'ArrowLeft' || 
         event.code === 'KeyA') {
         game.rider.directionX = -3
+        game.rider.element.style.transform = 'rotate(340deg)'
+
       }
       if (
         event.code === 'ArrowRight' || 
         event.code === 'KeyD') {
         game.rider.directionX = 3
+        game.rider.element.style.transform = 'rotate(10deg)'
       }      
     })
 
@@ -47,17 +50,16 @@ window.addEventListener('load', () => {
         event.code === 'ArrowRight' || 
         event.code === 'KeyD') {
         game.rider.directionX = 0
+        game.rider.element.style.transform = 'rotate(360deg)'
       }
     }) 
 
     document.addEventListener('keydown', event => { 
       if (event.code === 'KeyB') {              
           game.bottle = true
-          console.log(event.code)
       }
       if (event.code === 'KeyS') {              
           game.bottle = false
-          console.log(event.code)
       }   
       
             })

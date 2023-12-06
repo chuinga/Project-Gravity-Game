@@ -68,6 +68,9 @@ body {
   
 #game-container {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     padding: 20px 0px;
     justify-content: center;
@@ -81,6 +84,10 @@ body {
     position: absolute;
     background-image: url(../images/mountain.gif);
     background-size: cover;
+}
+
+#control-buttons {
+    display: none;
 }
 
 .dry-grass {
