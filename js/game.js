@@ -19,14 +19,13 @@ class Game {
         this.gameMusic = new Audio('sounds/game.mp3')
         this.ouchSound = new Audio('sounds/ouch.mp3')
         this.yummySound = new Audio('sounds/yummy.mp3')
-        this.gameOverSound = new Audio('sounds/game-over.mp3')
         this.endMusic = new Audio('sounds/end.mp3')
         this.gameMusic.volume = 0.2
         this.ouchSound.volume = 0.3
         this.yummySound.volume = 0.6
-        this.gameOverSound.volume = 0.1
         this.endMusic.volume = 0.1
         this.bottle = false
+        this.outcome = 'Win!'
         
 
         this.snackDb = ['images/apple.png', 'images/avocado.png', 'images/whey.png']        
@@ -76,6 +75,7 @@ class Game {
                     this.ouchSound.play()
                     if (this.lives <= 0) {
                         this.isGameOver = true
+                        this.outcome = 'Lose!'
                     }
                 }
                 else {
@@ -85,6 +85,10 @@ class Game {
             else {
                 currentObstacle.element.remove()
                 this.score += 10
+                if (this.score >= 100) {
+                    this.isGameOver = true  
+                    this.outcome = 'Win!'
+                }
             }
         })
         this.obstacles = nextObstacles
@@ -105,7 +109,11 @@ class Game {
                     currentBonus.element.remove()                     
                     this.yummySound.play() 
                     this.lives += 1
-                    this.score += 5                                                              
+                    this.score += 5     
+                    if (this.score >= 100) {
+                        this.isGameOver = true                        
+                        this.outcome = 'Win!'
+                    }                                                         
                 }
                 else {
                     nextBonus.push(currentBonus)
@@ -127,13 +135,13 @@ class Game {
 
         document.getElementById('score').innerText = this.score
         document.getElementById('lives').innerText = this.lives
+        document.getElementById('outcome').innerText = this.outcome
 
         if (this.isGameOver) {
             this.gameScreen.style.display = 'none'            
             this.controlButtons.style.display = 'none'
             this.endScreen.style.display = 'block'  
-            this.gameMusic.pause()            
-            this.gameOverSound.play()             
+            this.gameMusic.pause()                
             this.endMusic.play()
             this.rider.element.remove()
             document.getElementById('finalScore').innerText = this.score
