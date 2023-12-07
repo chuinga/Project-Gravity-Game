@@ -1,79 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+    <head>
 
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	    <meta charset="UTF-8" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="./styles/style.css" />
 
-    <link rel="stylesheet" href="./styles/style.css" />
+	    <title>DH Gravity</title>
 
-	<title>DH Gravity</title>
+    </head>
 
-</head>
+    <body>
+        <main>
 
-<body>
-
-    <main>
-        
-        <!-- game start screen -->
-        <section id="game-intro">
-            <img src="images/game-logo.png" alt="Game Logo" class="main-logo-img">
-            <br />
-            
-            <div id="start">
-                <img src="images/mtb-logo.png" alt="DH Logo" class="mtb-logo-img">
-                <button id="start-button">Start Game</button>                
-                <div>
-                    <img src="images/arrow-keys.png" alt="Arrow Keys" class="arrows-img">
-                    <p class="instructions">Use up, left and right arrows</p>
-                    <p class="instructions">to overcome the obstacles!</p>
-                </div>                
-            </div>
-        </section>
-        
-        <!-- game screen -->
-        <section id="game-container">
-            
-            <div id="game-screen">
-                <div class="stats">
-                    <h2>Stats</h2>
-                    <p>Score: <span id="score">0</span></p>
-                    <p>Lives: <span id="lives">3</span></p>
-                </div>  
-                <div class="dry-grass"></div>
-                             
-            </div>
-            <div id="control-buttons">
-                <button id="left-button"><img src="images/left-key.png" alt="left"></button>
-                <button id="up-button"><img src="images/up-key.png" alt="up"></button>
-                <button id="right"><img src="images/right-key.png" alt="right"></button>
-            </div>  
-        </section>
-
-        <!-- game-end screen -->
-        <section id="game-end">
-            <div class="end">
-                <div class="finale">
-                    <p>Game Over!<br>You <span id="outcome">Win!</span></p>
-                    <p></p>
+            <!-- game start screen -->
+            <section id="game-intro">
+                <img src="images/game-logo.png" alt="Game Logo" class="main-logo-img">
+                <br />            
+                <div id="start">
+                    <img src="images/mtb-logo.png" alt="DH Logo" class="mtb-logo-img">
+                    <button id="start-button">Start Game</button>                
+                    <div>
+                        <img src="images/arrow-keys.png" alt="Arrow Keys" class="arrows-img">
+                        <p class="instructions">Use up, left and right arrows</p>
+                        <p class="instructions">to overcome the obstacles!</p>
+                    </div>                
                 </div>
-                <button id="restart-button">Restart</button>
-                <p class="finale">Final Score: <span id="finalScore">0</span></p>
-            </div>
-            
-            <img src="images/game-end.png" alt="Game-End" class="game-end-img">
-        </section>       
+            </section>
+        
+            <!-- game screen -->
+            <section id="game-container">            
+                <div id="game-screen">
+                    <div class="stats">
+                        <h2>Stats</h2>
+                        <p>Score: <span id="score">0</span></p>
+                        <p>Lives: <span id="lives">3</span></p>
+                    </div>  
+                    <div class="dry-grass"></div>                             
+                </div>
+            </section>
 
-    </main>
+            <!-- game-end screen -->
+            <section id="game-end">
+                <div class="end">
+                    <div class="finale">
+                        <p>Game Over!<br>You <span id="outcome">Win!</span></p>
+                        <p></p>
+                    </div>
+                    <button id="restart-button">Restart</button>
+                    <p class="finale">Final Score: <span id="finalScore">0</span></p>
+                </div>            
+                <img src="images/game-end.png" alt="Game-End" class="game-end-img">
+            </section>    
+        </main>
 
-    <script type="text/javascript" src="js/bonus.js"></script>
-    <script type="text/javascript" src="js/obstacles.js"></script>
-    <script type="text/javascript" src="js/rider.js"></script>
-    <script type="text/javascript" src="js/game.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/bonus.js"></script>
+        <script type="text/javascript" src="js/obstacles.js"></script>
+        <script type="text/javascript" src="js/rider.js"></script>
+        <script type="text/javascript" src="js/game.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
 
-</body>
-
+    </body>
 </html>
