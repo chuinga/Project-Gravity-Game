@@ -9,7 +9,6 @@ Gravity is a game where players jump over obstacles to gain score and try to cat
 
 
 ## MVP
-"A minimum viable product, or MVP, is a product with enough features to attract early-adopter customers and validate a product idea early in the product development cycle." 
 - Biker gains speed by clicking 'right' or 'KeyD' and slows by clicking 'left' or 'KeyA'
 - Biker jumps over obstacles by clicking 'up' or 'KeyW' 
 - Obstacles appear in the screen randomly, if the rider hits them, he loses a life if not he scores 10 points
@@ -34,29 +33,10 @@ Gravity is a game where players jump over obstacles to gain score and try to cat
 - JS Classes
 
 
-## States y States Transitions
+## States 
 - Start Screen
 - Game Screen
 - Game Over Screen
-
-
-# Proyect Structure
-
-## script.js
-- 
-
-## game.js
-- 
-
-## rider.js
-- 
-
-## obstacles.js
-- 
-
-## bonus.js
-- 
-
 
 
 ## Links
