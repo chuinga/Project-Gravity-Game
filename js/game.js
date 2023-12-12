@@ -30,7 +30,7 @@ class Game {
     // "easter eggs" random image display
     showImage() {
         if(this.bottle) {
-           const a = Math.floor(Math.random() * this.bottleDb.length);
+            const a = Math.floor(Math.random() * this.bottleDb.length);
             return this.bottleDb[a]; 
         }
         else {
@@ -139,7 +139,6 @@ class Game {
             this.endMusic.play();
             this.rider.element.remove();
             document.getElementById('finalScore').innerText = this.score;
-            console.log(this.finalScore);
         }
         else {
           this.animateId = requestAnimationFrame(() => this.gameLoop());
