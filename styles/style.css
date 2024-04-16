@@ -63,8 +63,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 4%;
-    padding-right: 4%;
 }
   
 #game-container {
@@ -158,6 +156,7 @@ body {
 .stats {
     font-size: clamp(17px, 3vw, 27px);
     font-weight: bold;
+    align-content: flex-start;
 }
 
 .end {
@@ -176,8 +175,7 @@ body {
     padding: 1vh 5vw;
     border: 1;
     border-radius: 40px;
-    margin-bottom: 20px;
-    margin-right: 0;
+    margin: 5%;
     cursor: pointer;
     box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.589); 
     outline: none; 
@@ -196,22 +194,112 @@ body {
 }
 
 .game-end-img {
-    width: 99vw;
+    width: 99%;
 }
 
-/* Media Queries for screen sizes */
-@media screen and (max-width: 600px) {
-    /* CSS code for small screens */
+/* Mobile devices */
+@media screen and (max-width: 768px) {
+    .main-logo-img {
+        width: 50vw;
+    }
+
+    .mtb-logo-img {
+        width: 45vw;
+    }
+
+    .arrows-img {
+        width: 15vw;
+    }
+
+    #start-button, #restart-button {
+        font-size: clamp(1rem, 3vw, 1.375rem);
+    }
+
+    .instructions, .stats, p, .finale {
+        font-size: clamp(0.7rem, 3vw, 1.375rem);
+    }
 }
 
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-    /* CSS code for medium screens */
+/* Tablet devices */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .main-logo-img {
+        width: 40vw;
+    }
+
+    .mtb-logo-img {
+        width: 35vw;
+    }
+
+    .arrows-img {
+        width: 12vw;
+    }
+
+    #start-button, #restart-button {
+        font-size: clamp(1rem, 2.5vw, 1.375rem);
+    }
+
+    .instructions, .stats {
+        font-size: clamp(1rem, 2.5vw, 1.375rem);
+    }
+
+    #start {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
 }
 
+/* Desktop and laptop devices */
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
-    /* CSS code for large screens */
+    .main-logo-img {
+        width: 35vw;
+    }
+
+    .mtb-logo-img {
+        width: 30vw;
+    }
+
+    .arrows-img {
+        width: 10vw;
+    }
+
+    #start-button, #restart-button {
+        font-size: clamp(1rem, 2vw, 1.375rem);
+    }
+
+    .instructions, .stats {
+        font-size: clamp(1rem, 2vw, 1.375rem);
+    }
+
+    #start {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
 }
 
+/* Large desktop devices */
 @media screen and (min-width: 1441px) {
-    /* CSS code for extra large screens */
+    .main-logo-img {
+        width: 30vw;
+    }
+
+    .mtb-logo-img {
+        width: 25vw;
+    }
+
+    .arrows-img {
+        width: 8vw;
+    }
+
+    #start-button, #restart-button {
+        font-size: clamp(1rem, 1.5vw, 1.375rem);
+    }
+
+    .instructions, .stats {
+        font-size: clamp(1rem, 1.5vw, 1.375rem);
+    }
+
+    #start {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
 }

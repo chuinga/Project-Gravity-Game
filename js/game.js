@@ -123,7 +123,7 @@ class Game {
         function rndIntvBonus(min, max) {
             return Math.floor(Math.random() * (max - min)) + min;
         }
-        const randomBonus = rndIntvBonus(300, 500);
+        const randomBonus = rndIntvBonus(500, 1000);
         if (this.animateId % randomBonus === 1) {
             this.bonus.push(new Bonus(this.gameScreen, this.showImage()));
         }
