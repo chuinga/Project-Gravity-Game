@@ -56,7 +56,6 @@ body {
   
 #game-intro { 
     background-color: black;   
-    magin
     padding: 40px 0px;
 }
 
@@ -161,7 +160,7 @@ body {
     font-weight: bold;
 }
 
-.end {;
+.end {
     margin: 20px 50px 50px;
     display: flex;
     justify-content: space-around;    
@@ -198,4 +197,21 @@ body {
 
 .game-end-img {
     width: 99vw;
+}
+
+/* Media Queries for screen sizes */
+@media screen and (max-width: 600px) {
+    /* CSS code for small screens */
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    /* CSS code for medium screens */
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    /* CSS code for large screens */
+}
+
+@media screen and (min-width: 1441px) {
+    /* CSS code for extra large screens */
 }
